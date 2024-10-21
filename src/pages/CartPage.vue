@@ -1,13 +1,11 @@
 <template>
-    <div>
-        Cart page
-    </div>
+  <div>
+    Cart page
+  </div>
 </template>
 
 <script>
-	export default {
-
-	}
+	export default {}
 </script>
 
 <style scoped>

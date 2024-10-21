@@ -1,4 +1,5 @@
 import {createRouter, createWebHistory} from "vue-router";
+
 import HomePage from "@/pages/HomePage";
 import CartPage from "@/pages/CartPage";
 import MockPage from "@/pages/MockPage"; // NOTE: 2024/10/17 for debugging only!
