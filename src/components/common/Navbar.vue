@@ -20,9 +20,10 @@
       <div class="navbar__icons ndbg">
         <div v-for="i in icons"
              :key="i.src"
-             class="navbar__icons-item ndbgr"
         >
-          <img :src="require('@/assets/images/components/Navbar/'+i.img)"/>
+          <img :src="require('@/assets/images/components/Navbar/'+i.img)"
+               @click="i.link ? $router.push(i.link) : null"
+          />
         </div>
       </div>
     </div>
@@ -41,10 +42,10 @@
 					{title: 'Contact', link: '/mock/contact'},
 				],
 				icons: [
-					{img: 'account-icon.svg'},
-					{img: 'search-icon.svg'},
-					{img: 'heart-icon.svg'},
-					{img: 'cart-icon.svg'},
+					{img: 'account-icon.svg', link: null},
+					{img: 'search-icon.svg', link: null},
+					{img: 'heart-icon.svg', link: null},
+					{img: 'cart-icon.svg', link: '/cart'},
 				],
 			}
 		},
@@ -121,6 +122,8 @@
 
       display: flex;
       justify-content: space-between;
+
+      cursor: pointer;
     }
   }
 </style>

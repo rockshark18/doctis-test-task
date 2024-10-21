@@ -3,6 +3,8 @@ class ProductService {
 	constructor() {
 		if (!ProductService.instance) {
 
+			console.log('[ProductService] constructor()')
+
 			// NOTE: mock/test products
 			this.products = [
 				{ id: 100,
@@ -10,7 +12,8 @@ class ProductService {
 					desc: 'Stylish cafe chair',
 					image: '1.jpg',
 					price: 3500000,
-					sale: 0.3,
+					salePrice: 2500000,
+					sale: 30,
 					isNew: false,
 				},
 				{ id: 101,
@@ -18,6 +21,7 @@ class ProductService {
 					desc: 'Stylish cafe chair',
 					image: '2.jpg',
 					price: 2500000,
+					salePrice: null,
 					sale: null,
 					isNew: false,
 				},
@@ -26,7 +30,8 @@ class ProductService {
 					desc: 'Luxury big sofa',
 					image: '3.jpg',
 					price: 14000000,
-					sale: 0.5,
+					salePrice: 7000000,
+					sale: 50,
 					isNew: false,
 				},
 				{ id: 103,
@@ -34,6 +39,7 @@ class ProductService {
 					desc: 'Outdoor bar table and stool',
 					image: '4.jpg',
 					price: 500000,
+					salePrice: null,
 					sale: null,
 					isNew: true,
 				},
@@ -42,6 +48,7 @@ class ProductService {
 					desc: 'Night lamp',
 					image: '5.jpg',
 					price: 1500000,
+					salePrice: null,
 					sale: null,
 					isNew: false,
 				},
@@ -50,6 +57,7 @@ class ProductService {
 					desc: 'Small mug',
 					image: '6.jpg',
 					price: 150000,
+					salePrice: null,
 					sale: null,
 					isNew: true,
 				},
@@ -57,8 +65,9 @@ class ProductService {
 					name: 'Pingky',
 					desc: 'Cute bed set',
 					image: '7.jpg',
-					price: 1400000,
-					sale: 0.5,
+					price: 14000000,
+					salePrice: 7000000,
+					sale: 50,
 					isNew: false,
 				},
 				{ id: 107,
@@ -66,6 +75,7 @@ class ProductService {
 					desc: 'Minimalist flower pot',
 					image: '8.jpg',
 					price: 500000,
+					salePrice: null,
 					sale: null,
 					isNew: true,
 				},
@@ -78,8 +88,8 @@ class ProductService {
 	async getProducts() {
 		try {
 			return this.products
-		} catch (e) {
-			throw e;
+		} catch (error) {
+			throw error;
 		}
 	}
 }
