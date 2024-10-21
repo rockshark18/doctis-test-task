@@ -22,7 +22,7 @@
              :key="i.src"
              class="navbar__icons-item ndbgr"
         >
-          <img :src="require('@/assets/images/components/Navbar/'+i.src)"/>
+          <img :src="require('@/assets/images/components/Navbar/'+i.img)"/>
         </div>
       </div>
     </div>
@@ -41,10 +41,10 @@
 					{title: 'Contact', link: '/mock/contact'},
 				],
 				icons: [
-					{src: 'account-icon.svg'},
-					{src: 'search-icon.svg'},
-					{src: 'heart-icon.svg'},
-					{src: 'cart-icon.svg'},
+					{img: 'account-icon.svg'},
+					{img: 'search-icon.svg'},
+					{img: 'heart-icon.svg'},
+					{img: 'cart-icon.svg'},
 				],
 			}
 		},
