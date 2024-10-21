@@ -1,11 +1,17 @@
 <template>
   <div>
-    Cart page
+    <cart-banner></cart-banner>
   </div>
 </template>
 
 <script>
-	export default {}
+	import CartBanner from "@/components/CartBanner";
+
+	export default {
+		components: {
+			CartBanner,
+		},
+	}
 </script>
 
 <style scoped>

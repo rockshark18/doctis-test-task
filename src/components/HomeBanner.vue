@@ -1,7 +1,6 @@
 <template>
   <div class="banner__body ndbg">
     <div class="subframe ndbg">
-      <!--<div class="dbg" style="width: 100%; height: 100%"></div>-->
       <div class="subframe__tag">New Arrival</div>
       <div class="subframe__title">
           Discover Our &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New Collection <!-- NOTE: 2024/10/18 trick to carry text on new line -->
@@ -40,7 +39,7 @@
     padding: 60px 45px 45px 45px;
 
     &__tag {
-      font-family: 'Poppins';
+      font-family: $primary-font;
       font-weight: 600;
       font-size: 16px;
       line-height: 24px;
@@ -50,7 +49,7 @@
     }
 
     &__title{
-        font-family: 'Poppins';
+      font-family: $primary-font;
         font-weight: 700;
         font-size: 52px;
         line-height: 65px;
@@ -61,7 +60,7 @@
     &__text {
       margin-top: 15px;
 
-      font-family: 'Poppins';
+      font-family: $primary-font;
       font-weight: 500;
       font-size: 18px;
       line-height: 24px;
@@ -78,7 +77,7 @@
       background-color: $accent-color;
       color: #fff;
 
-      font-family: 'Poppins';
+      font-family: $primary-font;
       font-weight: 700;
       font-size: 16px;
       line-height: 24px;
@@ -88,10 +87,6 @@
       display: flex;
       justify-content: center; // center H
       align-items: center;     // center V
-
-
     }
-
   }
-
 </style>

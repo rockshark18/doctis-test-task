@@ -1,10 +1,10 @@
 <template>
-  <div class="navbar dbgr">
+  <div class="navbar ndbgr">
 
     <div class="navbar__body ndbg">
       <!-- logo -->
       <div class="navbar__logo ndbgg" @click="$router.push('/')">
-        <img src="@/assets/images/components/Navbar/logo.png"/> <!-- NOTE: 2024/10/17 - I think move images to the 'static' _public_ folder from _assets_ folder -->
+        <img src="@/assets/images/common/logo.png"/> <!-- NOTE: 2024/10/17 - I think move images to the 'static' _public_ folder from _assets_ folder -->
         <div class="navbar__logo-text">Furniro</div>
       </div>
       <!-- text menu block -->
@@ -78,13 +78,12 @@
       display: flex;
 
       &-text {
-        font-family: 'Montserrat';
+        font-family: $secondary-font;
         font-weight: 700;
         font-size: 34px;
         line-height: 41.45px;
 
         color: $default-color;
-        /*padding-left: 5px;*/
       }
     }
 
@@ -97,11 +96,10 @@
       justify-content: space-between;
 
       &-item {
-        width: auto; /* remove/comment this */
         cursor: pointer;
 
         &-text {
-          font-family: 'Poppins';
+          font-family: $primary-font;
           font-weight: 500;
           font-size: 16px;
           line-height: 24px;
@@ -123,11 +121,6 @@
 
       display: flex;
       justify-content: space-between;
-
-      &-item { /* NOTE: this class needs to be removed. Unnecessary*/
-        width: auto; /* remove/comment this */
-      }
-
     }
   }
 </style>
