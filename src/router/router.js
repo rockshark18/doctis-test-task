@@ -1,13 +1,7 @@
 import {createRouter, createWebHistory} from "vue-router";
 import HomePage from "@/pages/HomePage";
 import CartPage from "@/pages/CartPage";
-/*
-import UserPage from "@/pages/UserPage";
-import About from "@/pages/About";
-import PostIdPage from "@/pages/PostIdPage";
-import PostPageWithStore from "@/pages/PostPageWithStore";
-import PostPageCompositionApi from "@/pages/PostPageCompositionApi";
-*/
+import MockPage from "@/pages/MockPage"; // NOTE: 2024/10/17 for debugging only!
 
 const routes = [
 	{
@@ -17,6 +11,10 @@ const routes = [
 	{
 		path: '/cart',
 		component: CartPage
+	},
+	{
+		path: '/mock/:arg',
+		component: MockPage
 	},
 ]
 
