@@ -1,58 +1,64 @@
 <template>
-  <div>
-    <home-banner></home-banner>
-    <home-categories></home-categories>
-    <home-product-list
-      :products="products"
-      @addToCart="addToCart"
-    ></home-product-list>
-  </div>
+  <navbar :trigger="addItemTriggerCounter"></navbar>
+  <home-banner></home-banner>
+  <home-categories></home-categories>
+  <home-product-list
+    :products="products"
+    @addToCart="addToCart"
+  ></home-product-list>
+  <footer-component></footer-component>
 </template>
 
 <script>
-  // import
-	import { productService } from '@/services/services.js';
+	// services
+	import {productService} from '@/services/services.js';
 
+	// models
+	import cartModel from '@/models/cartModel';
+
+	// vue components
+	import Navbar from "@/components/common/Navbar";
+	import FooterComponent from "@/components/common/Footer";
 	import HomeBanner from "@/components/HomeBanner";
 	import HomeCategories from "@/components/HomeCategories";
 	import HomeProductList from "@/components/HomeProductList";
 
 	export default {
 		components: {
+			FooterComponent,
+			Navbar,
 			HomeBanner,
 			HomeCategories,
 			HomeProductList
 		},
 		data() {
 			return {
-				products:[],
+				products: [],
+        addItemTriggerCounter: 0,
 			}
 		},
 		async mounted() {
 			await this.loadProducts()
 		},
-		computed: {
-		},
-		watch: {
-		},
 		methods: {
-      async loadProducts(){
+			async loadProducts() {
 				console.log('[HomePage] loadProducts')
-	      try {
-		      this.products = await productService.getProducts();
-		      console.log('[HomePage] loadProducts. OK', this.products)
-	      } catch (error) {
-		      console.error('[HomePage] loadProducts. ERROR: ', error)
-	      }
-      },
-      // event handling
+				try {
+					this.products = await productService.getProducts();
+					console.log('[HomePage] loadProducts. OK', this.products)
+				} catch (error) {
+					console.error('[HomePage] loadProducts. ERROR: ', error)
+				}
+			},
+			// event handling
 			addToCart(product) {
-        console.log('[HomePage] addToCart. Product = ',product)
+				cartModel.addItem(product, 1)
+				// update
+				this.addItemTriggerCounter++;
 			},
 		},
 	}
 </script>
 
 <style scoped>
-
 </style>

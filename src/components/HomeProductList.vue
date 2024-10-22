@@ -11,6 +11,7 @@
         :key="p.id"
         :product="p"
         class=""
+        @addToCart="addToCart"
       >
       </home-product-list-item>
     </div>
@@ -27,18 +28,19 @@
 				required: true
 			}
 		},
-
 		components: {
 			HomeProductListItem
 		},
 		data() {
 			return {}
 		},
-		mounted() {
-		},
-		computed: {},
-		watch: {},
-		methods: {},
+		methods: {
+			// event handling
+			addToCart(product){
+				// sending up
+				this.$emit('addToCart', product)
+      }
+    },
 	}
 </script>
 

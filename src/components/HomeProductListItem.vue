@@ -19,7 +19,7 @@
 
     <!-- Overlay content -->
     <div class="overlay">
-      <button class="overlay__button" @click="console.log('Add to cart')">Add to cart</button> <!-- TODO: handle add-to-cart logic -->
+      <button class="overlay__button" @click="onAddToCart()">Add to cart</button>
 
       <div class="overlay__icons">
         <div class="overlay__icon">
@@ -48,8 +48,6 @@
 				required: true,
 			}
 		},
-
-		components: {},
 		data() {
 			return {
 				currency: 'Rp',
@@ -62,10 +60,6 @@
 		created() {
 			this.processProduct(); // NOTE: gpt advices this place to one-time calcs not 'mounted' hook
 		},
-		mounted() {
-		},
-		computed: {},
-		watch: {},
 		methods: {
 			processProduct() {
 				// priority: 1) sale first 2) 'new' marker
@@ -90,8 +84,12 @@
 				} else {
 					return '';
 				}
-			}
-
+			},
+			// event
+      onAddToCart(){
+				// sending up
+	      this.$emit('addToCart', this.product)
+      }
 		},
 	}
 </script>

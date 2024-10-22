@@ -1,38 +1,41 @@
 <template>
-  <div>
-    <cart-banner></cart-banner>
-    <cart-details></cart-details>
+  <navbar></navbar>
+  <cart-banner></cart-banner>
+  <cart-details></cart-details>
 
-    <!-- info / highlights -->
-    <div class="highlights">
-      <div v-for="i in highlightItems"
-           :key="i.title"
-           class="item"
-      >
-        <div class="item__img ndbg">
-          <img :src="require('@/assets/images/cart/'+i.img)"/>
-        </div>
-        <div class="item__content ndbg">
-          <div class="item__content-title ndbgr">
-            {{i.title}}
-          </div>
-          <div class="item__content-text ndbgr">
-            {{i.text}}
-          </div>
-
-        </div>
+  <!-- info / highlights -->
+  <div class="highlights">
+    <div v-for="i in highlightItems"
+         :key="i.title"
+         class="item"
+    >
+      <div class="item__img ndbg">
+        <img :src="require('@/assets/images/cart/'+i.img)"/>
       </div>
+      <div class="item__content ndbg">
+        <div class="item__content-title ndbgr">
+          {{i.title}}
+        </div>
+        <div class="item__content-text ndbgr">
+          {{i.text}}
+        </div>
 
+      </div>
     </div>
   </div>
+  <footer-component></footer-component>
 </template>
 
 <script>
+	import Navbar from "@/components/common/Navbar";
+	import FooterComponent from "@/components/common/Footer";
 	import CartBanner from "@/components/CartBanner";
 	import CartDetails from "@/components/CartDetails";
 
 	export default {
 		components: {
+			FooterComponent,
+			Navbar,
 			CartBanner,
 			CartDetails,
 		},
@@ -91,7 +94,7 @@
         line-height: 30px;
 
         color: #898989;
-       }
+      }
     }
   }
 </style>

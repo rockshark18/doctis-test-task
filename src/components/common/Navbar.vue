@@ -25,6 +25,11 @@
                @click="i.link ? $router.push(i.link) : null"
           />
         </div>
+        <!-- cart -->
+        <div class="cart-notification__container ndbg" @click="$router.push('/cart')">
+          <div v-if="cartItemsCount!==null" class="cart-notification">{{cartItemsCount}}</div>
+          <img src="@/assets/images/components/Navbar/cart-icon.svg"/>
+        </div>
       </div>
     </div>
   </div>
@@ -32,9 +37,19 @@
 </template>
 
 <script>
+	// models
+	import cartModel from '@/models/cartModel';
+
 	export default {
+		props: {
+			trigger: { // NOTE: Trick. for external force-update cart items count (used in the HomePage for force-update when a new product is added into the cart)
+				type: Number,
+				required: false,
+			}
+		},
 		data() {
 			return {
+        cartItemsCount: null,
 				menuItems: [
 					{title: 'Home', link: '/mock/home'},
 					{title: 'Shop', link: '/mock/shop'},
@@ -45,9 +60,22 @@
 					{img: 'account-icon.svg', link: null},
 					{img: 'search-icon.svg', link: null},
 					{img: 'heart-icon.svg', link: null},
-					{img: 'cart-icon.svg', link: '/cart'},
+					//{img: 'cart-icon.svg', link: '/cart'} // added manually
 				],
 			}
+		},
+		mounted() {
+			this.updateCartItemsCount();
+		},
+		watch: {
+			trigger(newValue, oldValue) {
+				this.updateCartItemsCount();
+			}
+		},
+		methods: {
+      updateCartItemsCount(){
+	      this.cartItemsCount = cartModel.getResultNumItems();
+      }
 		},
 	}
 </script>
@@ -126,4 +154,29 @@
       cursor: pointer;
     }
   }
+
+  .cart-notification{
+    &__container {
+      position: relative;
+    }
+    position: absolute;
+
+    left: 16px;
+    top: -8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50px;
+    font-family: $primary-font;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1px;
+    color: #fff;
+    text-align: center;
+    padding-top: 12px;
+
+    background-color: #f00;
+
+
+  }
+
 </style>
