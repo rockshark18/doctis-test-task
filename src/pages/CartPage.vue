@@ -1,7 +1,12 @@
 <template>
-  <navbar></navbar>
+  <navbar :key="forceUpdateKey"></navbar> <!-- NOTE: подход через $ref->method() не использую а использую через :key , т.к. в случае с :key больше декларативности, не увеличивается связность, и не нарушается инкапсуляця (радителю не надо знать о внутреннем устройстве child)   -->
   <cart-banner></cart-banner>
-  <cart-details></cart-details>
+  <cart-details
+    :key="forceUpdateKey"
+    @delete="onDelete"
+  >
+  </cart-details>
+
 
   <!-- info / highlights -->
   <div class="highlights">
@@ -27,6 +32,13 @@
 </template>
 
 <script>
+  // services
+  import {productService} from "@/services/services";
+
+  // models
+	import cartModel from '@/models/cartModel';
+
+	// vue components
 	import Navbar from "@/components/common/Navbar";
 	import FooterComponent from "@/components/common/Footer";
 	import CartBanner from "@/components/CartBanner";
@@ -47,7 +59,18 @@
 					{title: 'Free Shipping', text: 'Order over 150 $', img: 'icon-shipping.svg'},
 					{title: '24 / 7 Support', text: 'Dedicated support', img: 'icon-support.svg'},
 				],
+				forceUpdateKey:0
 			}
+		},
+		methods: {
+			// event handling
+			onDelete(cartItem) {
+				if (confirm("Удалить  '" + cartItem.name + "' из корзины?")) {
+					console.log(cartItem)
+          cartModel.removeItem(cartItem.id)
+					this.forceUpdateKey++;
+				}
+			},
 		},
 	}
 </script>

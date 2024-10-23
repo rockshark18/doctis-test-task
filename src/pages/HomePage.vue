@@ -1,5 +1,5 @@
 <template>
-  <navbar :trigger="addItemTriggerCounter"></navbar>
+  <navbar :key="forceUpdateKey"></navbar> <!-- NOTE: подход через $ref->method() не использую а использую через :key , т.к. в случае с :key больше декларативности, не увеличивается связность, и не нарушается инкапсуляця (радителю не надо знать о внутреннем устройстве child)   -->
   <home-banner></home-banner>
   <home-categories></home-categories>
   <home-product-list
@@ -34,7 +34,7 @@
 		data() {
 			return {
 				products: [],
-        addItemTriggerCounter: 0,
+				forceUpdateKey: 0,
 			}
 		},
 		async mounted() {
@@ -54,7 +54,7 @@
 			addToCart(product) {
 				cartModel.addItem(product, 1)
 				// update
-				this.addItemTriggerCounter++;
+				this.forceUpdateKey++;
 			},
 		},
 	}

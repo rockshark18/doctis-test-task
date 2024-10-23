@@ -5,8 +5,8 @@ import Transcoder from '@/utility/transcoder';
 // const
 const STORAGE_KEY = 'cart'; // const/define
 const MAX_QUANTITY = 100; // quantity limiter per item
-const MIN_QUANTITY = 0;
-const SHIPPING_COST_PERCENTS_OF_SUBTOTAL = 1.0; // 1% of items sum
+const MIN_QUANTITY = 1;
+const SHIPPING_COST_PERCENTS_OF_SUBTOTAL = 2; // 1% of items sum
 
 const ENCRYPTION_ENABLED = false //true // NOTE: this option encryptes cart data in the Local Storage for additional (weak) security
 
@@ -98,7 +98,7 @@ class CartModel {
 			if (items.length !== 0) {
 				ls.setItem(STORAGE_KEY, this.encrypt(items))
 			} else {
-				clear();
+				this.clear();
 			}
 		}
 		this.updateResult();

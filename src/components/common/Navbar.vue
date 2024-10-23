@@ -41,12 +41,6 @@
 	import cartModel from '@/models/cartModel';
 
 	export default {
-		props: {
-			trigger: { // NOTE: Trick. for external force-update cart items count (used in the HomePage for force-update when a new product is added into the cart)
-				type: Number,
-				required: false,
-			}
-		},
 		data() {
 			return {
         cartItemsCount: null,
@@ -66,11 +60,6 @@
 		},
 		mounted() {
 			this.updateCartItemsCount();
-		},
-		watch: {
-			trigger(newValue, oldValue) {
-				this.updateCartItemsCount();
-			}
 		},
 		methods: {
       updateCartItemsCount(){
