@@ -32,9 +32,6 @@
 </template>
 
 <script>
-  // services
-  import {productService} from "@/services/services";
-
   // models
 	import cartModel from '@/models/cartModel';
 

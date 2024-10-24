@@ -52,7 +52,7 @@
               <div class="total-block__text">Total</div>
               <div class="total-block__value-primary">{{formatPrice(total)}}</div>
             </div>
-            <div class="total-block__button" @click="console.log('@CLICK: check out ')">Check Out</div>
+            <button class="total-block__button" @click="console.log('@CLICK: check out ')">Check Out</button>
           </div>
         </div>
       </div>
@@ -302,6 +302,9 @@
 
         border: 1px solid $default-color;
         border-radius: 15px;
+
+        padding: 14px 58px;
+        background-color: rgba($color: #fff, $alpha: 0.0);
       }
     }
   }
