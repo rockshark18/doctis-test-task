@@ -3,17 +3,13 @@
     <div class="subframe ndbg">
       <div class="subframe__tag">New Arrival</div>
       <div class="subframe__title">
-          Discover Our &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New Collection <!-- NOTE: 2024/10/18 trick to carry text on new line -->
+          Discover Our<br>New Collection
       </div>
       <div class="subframe__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</div>
       <button class="subframe__button">buy now</button>
     </div>
   </div>
 </template>
-
-<script>
-	export default {}
-</script>
 
 <style lang="scss" scoped>
   .banner {

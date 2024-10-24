@@ -1,7 +1,5 @@
 <template>
   <div class="banner__body ndbg">
-
-
     <div class="subframe ndbg">
       <img src="@/assets/images/common/logo.png"/>
 
@@ -16,10 +14,6 @@
     </div>
   </div>
 </template>
-
-<script>
-	export default {}
-</script>
 
 <style lang="scss" scoped>
   .banner {
