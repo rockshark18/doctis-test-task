@@ -2,9 +2,6 @@ class ProductService {
 	// NOTE: I use singleton pattern
 	constructor() {
 		if (!ProductService.instance) {
-
-			console.log('[ProductService] constructor()')
-
 			// NOTE: mock/test products
 			this.products = [
 				{ id: 100,
