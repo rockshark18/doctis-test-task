@@ -97,7 +97,6 @@
 <style lang="scss" scoped>
   .card-container {
     position: relative;
-    cursor: pointer;
     background-color: #F4F5F7;
     width: 285px;
     height: 446px;

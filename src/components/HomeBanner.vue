@@ -6,7 +6,7 @@
           Discover Our &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New Collection <!-- NOTE: 2024/10/18 trick to carry text on new line -->
       </div>
       <div class="subframe__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</div>
-      <div class="subframe__button">buy now</div>
+      <button class="subframe__button">buy now</button>
     </div>
   </div>
 </template>
