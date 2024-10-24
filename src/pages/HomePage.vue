@@ -42,12 +42,10 @@
 		},
 		methods: {
 			async loadProducts() {
-				console.log('[HomePage] loadProducts')
 				try {
 					this.products = await productService.getProducts();
-					console.log('[HomePage] loadProducts. OK', this.products)
 				} catch (error) {
-					console.error('[HomePage] loadProducts. ERROR: ', error)
+					// TODO:handle the error
 				}
 			},
 			// event handling

@@ -66,7 +66,6 @@
 			// event handling
 			onDelete(cartItem) {
 				if (confirm("Удалить  '" + cartItem.name + "' из корзины?")) {
-					console.log(cartItem)
           cartModel.removeItem(cartItem.id)
 					this.forceUpdateKey++;
 				}
