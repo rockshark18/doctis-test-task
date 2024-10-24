@@ -45,7 +45,7 @@
 			return {
         cartItemsCount: null,
 				menuItems: [
-					{title: 'Home', link: '/mock/home'},
+					{title: 'Home', link: '/'},
 					{title: 'Shop', link: '/mock/shop'},
 					{title: 'About', link: '/mock/about'},
 					{title: 'Contact', link: '/mock/contact'},
