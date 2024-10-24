@@ -21,14 +21,14 @@
         <div v-for="i in icons"
              :key="i.src"
         >
-          <img :src="require('@/assets/images/components/Navbar/'+i.img)"
+          <img :src="require('@/assets/images/components/navbar/'+i.img)"
                @click="i.link ? $router.push(i.link) : null"
           />
         </div>
         <!-- cart -->
         <div class="cart-notification__container ndbg" @click="$router.push('/cart')">
           <div v-if="cartItemsCount!==null" class="cart-notification">{{cartItemsCount}}</div>
-          <img src="@/assets/images/components/Navbar/cart-icon.svg"/>
+          <img src="@/assets/images/components/navbar/cart-icon.svg"/>
         </div>
       </div>
     </div>
